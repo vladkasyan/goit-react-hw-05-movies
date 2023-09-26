@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from '../api/api';
 
+import { List, Item } from './cast.module';
+import placeholder from '../images/placeholder.png';
 const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
@@ -33,7 +35,7 @@ const Cast = () => {
                   src={
                     actor.profile_path
                       ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
-                      : `${}`
+                      : `${placeholder}`
                   }
                   alt={actor.original_name}
                 />
