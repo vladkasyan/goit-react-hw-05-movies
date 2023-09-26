@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Loader } from '../Loader/Loader';
+import { Loader } from '../loader/loader';
 import {
   Container,
   Header,
@@ -12,15 +12,12 @@ import {
   IconLogo,
 } from './layout.module';
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <>
       <Container>
         <Header>
-          <Logo>
-            <IconLogo />
-            TMDB
-          </Logo>
+          <Logo>TMDB</Logo>
           <nav>
             <Links to="/" end>
               Home

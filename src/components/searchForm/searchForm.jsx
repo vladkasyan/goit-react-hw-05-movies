@@ -1,19 +1,27 @@
-import styled from 'styled-components';
+import propTypes from 'prop-types';
 
-export const Form = styled.form`
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0 16px;
-  flex-wrap: wrap;
+import { Form } from './searchForm.module';
 
-  input {
-    font-size: 1rem;
-    padding: 8px 32px 8px 8px;
-    width: 250px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #7b1799;
-    outline: none;
-  }
-`;
+export const SearchForm = ({ value, onChange }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <h2>Movie Search</h2>
+      <input
+        type="text"
+        debounceTimeout={500}
+        value={value}
+        onChange={e => onChange(e.target.value)}
+        placeholder="type here"
+      />
+    </Form>
+  );
+};
+
+SearchForm.propTypes = {
+  value: propTypes.string,
+  onChange: propTypes.func,
+};

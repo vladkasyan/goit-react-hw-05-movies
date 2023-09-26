@@ -23,7 +23,7 @@ export const LinkDetails = styled(Link)`
 
   &:hover,
   &:focus {
-    color: #064e8a;
+    color: #44068a;
   }
 
   @media screen and (min-width: 768px) {
@@ -48,16 +48,6 @@ export const LinkDetails = styled(Link)`
       z-index: 1;
     }
   }
-`;
-
-export const LogoIcon = styled(FaFilm)`
-  width: 20px;
-  height: 20px;
-  position: relative;
-  right: 6px;
-  top: 5px;
-  z-index: 1;
-  opacity: 0.7;
 `;
 
 LinkDetails.propTypes = {
