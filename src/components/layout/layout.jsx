@@ -2,15 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Loader } from '../loader/loader';
-import {
-  Container,
-  Header,
-  Logo,
-  Links,
-  Footer,
-  Text,
-  IconLogo,
-} from './layout.module';
+import { Container, Header, Logo, Links, Footer, Text } from './layout.module';
 
 export const Layout = () => {
   return (
