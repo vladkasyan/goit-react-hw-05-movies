@@ -4,7 +4,7 @@ import { fetchTrendingMovies } from 'components/api/api';
 
 import { MovieList } from 'components/movieList/movieList';
 
-const Home = () => {
+export const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
