@@ -28,7 +28,7 @@ const Movies = () => {
   return (
     <>
       <SearchForm setSearchParams={setSearchParams} />
-      {movies.length > 0 && <MovieList movies={movies} />}
+      {movies.length > 0 && <MovieList films={movies} />}
     </>
   );
 };
