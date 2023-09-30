@@ -8,12 +8,11 @@ import { MovieList } from 'components/movieList/movieList';
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentQuery = searchParams.get('query') || '';
+  const currentQuery = searchParams.get('query');
   const [loading, setLoading] = useState(false);
 
-  const changeQuery = query => {
-    const nextParams = query !== '' && { query };
-    setSearchParams(nextParams);
+  const handleSubmit = query => {
+    setSearchParams({ query });
   };
 
   useEffect(() => {
@@ -36,8 +35,8 @@ const Movies = () => {
 
   return (
     <>
-      <SearchForm value={currentQuery} setSearchParams={changeQuery} />
-      {loading && movies.length > 0 && <MovieList movies={movies} />}
+      <SearchForm value={currentQuery} setSearchParams={handleSubmit} />
+      {loadingmovies.length > 0 && <MovieList movies={movies} />}
     </>
   );
 };

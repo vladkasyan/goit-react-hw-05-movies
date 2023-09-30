@@ -9,7 +9,7 @@ export const SearchForm = ({ value, setSearchParams }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    setSearchParams({ query });
+    setSearchParams(query);
   };
 
   const handleSearchParams = ({ target: { value } }) => {
