@@ -5,13 +5,13 @@ import { fetchMovieCast } from '../api/api';
 import { List, Item } from './cast.module';
 import placeholder from '../images/placeholder.png';
 const Cast = () => {
-  const { id } = useParams();
+  const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
   useEffect(() => {
     const movieCast = async () => {
       try {
-        const response = await fetchMovieCast(id);
+        const response = await fetchMovieCast(movieId);
         setCast(response);
       } catch (error) {
         console.error(error);
@@ -19,7 +19,7 @@ const Cast = () => {
     };
 
     movieCast();
-  }, [id]);
+  }, [movieId]);
 
   return (
     <>

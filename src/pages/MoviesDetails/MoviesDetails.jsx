@@ -20,7 +20,7 @@ import {
 
 const MoviesDetails = () => {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState('');
+  const [movie, setMovie] = useState(null);
   const location = useLocation();
 
   const backLinkHref = location.state?.from ?? '/movies';
@@ -35,7 +35,7 @@ const MoviesDetails = () => {
     };
     fetchMovieById();
   }, [movieId]);
-
+  if (!movie) return;
   return (
     <>
       <GoBackLink>

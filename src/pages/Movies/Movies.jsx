@@ -9,7 +9,7 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const currentQuery = searchParams.get('query');
-  const [loading, setLoading] = useState(false);
+  const [, setLoading] = useState(false);
 
   const handleSubmit = query => {
     setSearchParams({ query });
@@ -36,7 +36,7 @@ const Movies = () => {
   return (
     <>
       <SearchForm value={currentQuery} setSearchParams={handleSubmit} />
-      {loadingmovies.length > 0 && <MovieList movies={movies} />}
+      {movies.length > 0 && <MovieList movies={movies} />}
     </>
   );
 };
