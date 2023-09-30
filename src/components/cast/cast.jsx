@@ -4,7 +4,7 @@ import { fetchMovieCast } from '../api/api';
 
 import { List, Item } from './cast.module';
 import placeholder from '../images/placeholder.png';
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [cast, setCast] = useState([]);
 
@@ -49,3 +49,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

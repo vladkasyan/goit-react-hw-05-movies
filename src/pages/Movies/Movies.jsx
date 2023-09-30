@@ -5,7 +5,7 @@ import { handleSearch } from 'components/api/api';
 import { SearchForm } from 'components/searchForm/searchForm';
 import { MovieList } from 'components/movieList/movieList';
 
-export const Movies = () => {
+const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -17,6 +17,7 @@ export const Movies = () => {
       try {
         const movieByQuery = await handleSearch(currentQuery);
         setMovies(movieByQuery);
+        console.log(movieByQuery);
       } catch (e) {
         console.log(e);
       }
@@ -31,3 +32,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;
