@@ -21,7 +21,7 @@ export const SearchForm = ({ value, setSearchParams }) => {
       <h2>Movie Search</h2>
       <input
         type="text"
-        value={value}
+        value={query}
         onChange={handleSearchParams}
         placeholder="type here"
       />
