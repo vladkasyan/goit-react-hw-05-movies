@@ -17,7 +17,7 @@ export const Item = styled.li`
 `;
 
 export const LinkDetails = styled(Link)`
-  color: #000;
+  color: #000000;
   text-decoration: none;
   margin: 1px;
 
@@ -41,7 +41,7 @@ export const LinkDetails = styled(Link)`
       display: block;
       border-radius: 4px;
       border: 1px solid rgba(43, 134, 197);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 4px rgba(41, 41, 41, 0.3);
       position: absolute;
       top: -140px;
       left: 400px;

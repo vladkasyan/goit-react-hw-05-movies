@@ -1,10 +1,19 @@
 import propTypes from 'prop-types';
+import { useState } from 'react';
 
 import { Form } from './searchForm.module';
 
-export const SearchForm = ({ value, onChange }) => {
+export const SearchForm = ({ value, setSearchParams }) => {
+  const [query, setQuery] = useState('');
+
   const handleSubmit = e => {
     e.preventDefault();
+
+    setSearchParams({ query });
+  };
+
+  const handleSearchParams = ({ target: { value } }) => {
+    setQuery(value);
   };
 
   return (
@@ -12,9 +21,8 @@ export const SearchForm = ({ value, onChange }) => {
       <h2>Movie Search</h2>
       <input
         type="text"
-        debounceTimeout={500}
         value={value}
-        onChange={e => onChange(e.target.value)}
+        onChange={handleSearchParams}
         placeholder="type here"
       />
     </Form>

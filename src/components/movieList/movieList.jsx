@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { List, Item, LinkDetails } from './movieList.module';
 
-export const MovieList = ({ films }) => {
+export const MovieList = ({ movies }) => {
   const location = useLocation();
 
   return (
     <List>
-      {films.map(movie => (
+      {movies.map(movie => (
         <Item key={movie.id}>
           <LinkDetails
             to={`/movies/${movie.id}`}
